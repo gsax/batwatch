@@ -70,7 +70,7 @@ fn watcher(parameter: Parameter) !void {
         // while (try reader.readUntilDelimiter([_]u8{}, '\n')) |line| {
         defer alloc.free(line);
         const stdout = std.io.getStdOut().writer();
-        try stdout.print("{s}: {s}\n", .{ parameter.name, line });
+        try stdout.print("{s:<18}{s:>14}\n", .{ parameter.name, line });
     }
 }
 
